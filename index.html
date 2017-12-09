@@ -1,32 +1,94 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <!--
 gentle - unicorn Template
-
-
 copyright (c) 2012 marcos software, all rights reserved                  
                                                                         
 this file may not be redistributed in whole or significant part and is subject to the marcos software license.
-
 Dieses Designtemplate darf nur in Verbindung mit unicorn benutzt werden. Weitere Infos unter http://www.marcos-software.de/unicorn-rakuten/
 Anderweitige Nutzung / Teilnutzung ist ohne schriftliche Genehmigung nicht erlaubt und wird geahndet. 
 Weitere Informationen zu den Nutzungsbedingungen siehe http://www.marcos-software.de
 License / Usage: http://www.marcos-software.de
-
-
 @author: marcos software, <info@marcos-software.de>
 @copyright: 2012, marcos-software.de, http://www.marcos-software.de   
 -->
 <html>
+ 
   <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>$#Text.Artikelname#$</title>
+  
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>$#Text.Artikelname#$</title>
+
+		<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+	  
+		<script>
+			
+		function showhidewhisky() {
+			var div = document.getElementById("inhalt-whisky");
+			if (div.className === "hide") {
+				div.className = "show";
+			} else {
+				div.className = "hide";
+			}
+		}
+			
+		function showhidewein() {
+			var div = document.getElementById("inhalt-wein");
+			if (div.className === "hide") {
+				div.className = "show";
+			} else {
+				div.className = "hide";
+			}
+		}
+			
+		function showhiderum() {
+			var div = document.getElementById("inhalt-rum");
+			if (div.className === "hide") {
+				div.className = "show";
+			} else {
+				div.className = "hide";
+			}
+		}
+			
+		function showhidezigarren() {
+			var div = document.getElementById("inhalt-zigarren");
+			if (div.className === "hide") {
+				div.className = "show";
+			} else {
+				div.className = "hide";
+			}
+		}
+			
+		</script>
+		
+		<style>
+		
+			.hide {
+				display: none;
+			}
+			
+			.show {
+				display: block;
+			}
+			
+	  	</style>
+		
   </head>
+  
   <body>
+   
     <img src="http://storage.marcos-software.de/files/image/WK8e6S5x848Q2Bq9.png"><br><br><br>
-    <font size="5"><b>$#Text.Artikelname#$</b></font><br><br>
-    <font size="2">$#Text.Hersteller#$<br>
-    $#Text.HAN#$<br>$#Merkmal.Inhalt#$<br>
-	
+    
+    <font size="5">
+    	<b>$#Text.Artikelname#$</b>
+    </font>
+    
+    <br><br>
+    
+    <font size="2">
+    	<!--$#Text.Hersteller#$<br>
+    	$#Text.HAN#$<br>
+    	$#Merkmal.Inhalt#$<br>
+	-->
 	<!--
 	$#Merkmal.Abfüller#$<br>
 	$#Merkmal.Abgefüllt am:#$<br>
@@ -83,108 +145,184 @@ License / Usage: http://www.marcos-software.de
 	$#Merkmal.Zündung#$<br>
 	-->
 	
-	</font><br><br><br> 
+	</font>
+	
+	<br><br><br> 
+	<!--
+	<button onclick="showhidewhisky()">Whisky</button>
+	
+	<button onclick="showhidewein()">Wein</button>
+
+	<button onclick="showhiderum()">Rum</button>
+	
+	<button onclick="showhidezigarren()">Zigarren</button>
+	-->
+	
+	<div id="allgemein" class="hide">
+		<div id="allgemein">
+			<table align="left" border="1">
+				<caption>Allgemein Inhalte</caption>
+					<tr>
+						<td>Alkoholgehalt</td> 
+						<td>$#Merkmal.Alkoholgehalt#$</td> 
+					</tr>
+					<tr> 
+						<td>HAN:</td>
+						<td>$#Text.HAN#$</td> 
+					</tr>
+					<tr> 
+						<td>Inhalt:</td>
+						<td>$#Merkmal.Inhalt#$</td> 
+					</tr>
+					<tr> 
+						<td>Hersteller:</td>
+						<td>$#Text.Hersteller#$</td> 
+					</tr>
+					<tr> 
+						<td>Hersteller/Vertrieb:</td>
+						<td>$#Merkmal.Hersteller / Vertrieb#$</td> 
+					</tr>
+				
+			</table>
+		</div>
+	</div>
+	
+<br><br>	
+	
+	<div id="inhalt-whisky" class="hide">
+		<div id="whisky">
+			<table align="left" border="1">
+				<caption>Merkmale von Whisky</caption>
+					<tr>
+						<th>Merkmal</th>
+						<th>Wert</th>
+					</tr>
+					<tr> 
+						<td>Whiskytyp</td>
+						<td>$#Merkmal.Whiskytyp#$</td> 
+					</tr>	
+					<tr>
+						<td>Torfgehalt</td> 
+						<td>$#Merkmal.Torfgehalt#$</td> 
+					</tr>
+					<tr>
+						<td>Abfüller</td> 
+						<td>$#Merkmal.Abfüller#$</td> 
+					</tr>
+					<tr>
+						<td>Abgefüllt am:</td> 
+						<td>$#Merkmal.Abgefüllt am:#$</td> 
+					</tr>
+					<tr>
+						<td>Alkoholgehalt</td> 
+						<td>$#Merkmal.Alkoholgehalt#$</td> 
+					</tr>
+					<tr>
+						<td>Alter</td>
+						<td>$#Merkmal.Alter#$</td>
+					</tr>
+					<tr>
+						<td>Alter</td>
+						<td>$#Merkmal.Alter#$</td>
+					</tr>
+				
+			</table>
+		</div>
+	</div>
 		
-	<div id="whisky" style="display:none;">
-		<table>
-			<caption>Merkmale Whisky </caption>
-				<tr>
-					<th>Merkmal</th>
-					<th>Wert</th>
-				</tr>
-				<tr> 
-					<td>Whiskytyp</td>
-					<td>$#Merkmal.Whiskytyp#$</td> 
-				</tr>	
-				<tr>
-					<td>Torfgehalt</td> 
-					<td>$#Merkmal.Torfgehalt#$</td> 
-				</tr>
-				<tr>
-					<td>Abfüller</td> 
-					<td>$#Merkmal.Abfüller#$</td> 
-				</tr>
-				<tr>
-					<td>Abgefüllt am:</td> 
-					<td>$#Merkmal.Abgefüllt am:#$</td> 
-				</tr>
-				<tr>
-					<td>Alkoholgehalt</td> 
-					<td>$#Merkmal.Alkoholgehalt#$</td> 
-				</tr>
-				<tr>
-					<td>Alter</td>
-					<td>$#Merkmal.Alter#$</td>
-				</tr>
-		</table>
+	<div id="inhalt-wein" class="hide">
+		<div id="wein">
+			<table align="left" border="1">
+				<caption>Merkmale von Wein </caption>
+					<tr>
+						<th>Merkmal</th>
+						<th>Wert</th>
+					</tr>
+					<tr>
+						<td>Region:</td>
+						<td>$#Merkmal.Region#$</td> 
+					</tr>
+					<tr> 
+						<td>Anbaugebiet:</td>
+						<td>$#Merkmal.Anbaugebiet#$</td> 
+					</tr>
+					<tr> 
+						<td>Weingut:</td>
+						<td>$#Merkmal.Weingut#$</td> 
+					</tr>
+					<tr>
+						<td>Alkoholgehalt:</td> 
+						<td>$#Merkmal.Alkoholgehalt#$</td> 
+					</tr>
+					<tr>
+						<td>Enthält:</td>
+						<td>$#Merkmal.Enthält#$<br></td>
+					</tr>
+					<tr>
+						<td>Weinart:</td>
+						<td>$#Merkmal.Weinart#$<br></td>
+					</tr>
+					<tr>
+						<td>Sensorische Beschreibung:</td>
+						<td>$#Merkmal.Sensorische Beschreibung#$<br></td>
+					</tr>
+					<tr>
+						<td>Rebsorte(n):</td>
+						<td>$#Merkmal.Rebsorten(n)#$<br></td>
+					</tr>
+					<tr>
+						<td>Enthält:</td>
+						<td>$#Merkmal.Enthält#$<br></td>
+					</tr>
+					<tr>
+						<td>Enthält:</td>
+						<td>$#Merkmal.Enthält#$<br></td>
+					</tr>
+					
+			</table>
+		</div>
+	</div>
+		
+	<div id="inhalt-rum" class="hide">
+	
+		<div id="rum">
+			<table align="left" border="1">
+				<caption>Merkmale von Rum </caption>
+					<tr>
+						<th>Merkmal</th>
+						<th>Wert</th>
+					</tr>
+					<tr> 
+						<td>Spalte 1</td>
+						<td>Spalte 2</td> 
+					</tr>
+			</table>
+		</div>
 	</div>
 	
-	</div>
-<button onclick="document.all.whisky.style.display=''">Whisky</button>
+	<div id="inhalt-zigarren" class="hide">
 
+		<div id="zigarren">
+			<table align="left" border="1">
+				<caption>Merkmale von Zigarren </caption>
+					<tr>
+						<th>Merkmal</th>
+						<th>Wert</th>
+					</tr>
+					<tr> 
+						<td>Spalte 1</td>
+						<td>Spalte 2</td> 
+					</tr>
+			</table>
+		</div>
+	</div>
 
-	<div id="wein" style="display:none;">
-		<table>
-			<caption>Merkmale Wein </caption>
-				<tr>
-					<th>Merkmal</th>
-					<th>Wert</th>
-				</tr>
-				<tr> 
-					<td>Spalte 1</td>
-					<td>Spalte 2</td> 
-				</tr>
-		</table>
-	</div>
-	
-	</div>
-<button onclick="document.all.wein.style.display=''">Wein</button>
-
-	<div id="rum" style="display:none;">
-		<table>
-			<caption>Merkmale Rum </caption>
-				<tr>
-					<th>Merkmal</th>
-					<th>Wert</th>
-				</tr>
-				<tr> 
-					<td>Spalte 1</td>
-					<td>Spalte 2</td> 
-				</tr>
-		</table>
-	</div>
-	
-	</div>
-<button onclick="document.all.rum.style.display=''">Rum</button>
-
-	<div id="zigarren" style="display:none;">
-		<table>
-			<caption>Merkmale Zigarren </caption>
-				<tr>
-					<th>Merkmal</th>
-					<th>Wert</th>
-				</tr>
-				<tr> 
-					<td>Spalte 1</td>
-					<td>Spalte 2</td> 
-				</tr>
-		</table>
-	</div>
-	
-	</div>
-<button onclick="document.all.zigarren.style.display=''">Zigarren</button>
-
-
-<!--
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script type="text/javascript">
 			function toggleDiv(divId) {
 				$("#"+divId).toggle();
 			}
 		</script>
-
-
-
 <a href="javascript:toggleDiv('whisky');" style="background-color: ; padding: 5px 10px;">Whisky</a>
 <div id="whisky" style="background-color: #aaa; padding: 5px 10px;">
 	<table>
@@ -201,8 +339,7 @@ License / Usage: http://www.marcos-software.de
 </div>
 -->
 
-
-
+<br>
 	
     <table border="0" cellpadding="0" cellspacing="0">
      <tr>
